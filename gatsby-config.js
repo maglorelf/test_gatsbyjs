@@ -3,8 +3,16 @@ module.exports = {
     siteUrl: "https://www.yourdomain.tld",
     title: "Gatsby in TauIdeas",
   },
-  plugins: [
-    "gatsby-plugin-image",
-    "gatsby-plugin-sharp",
-  ],
+plugins: [
+  "gatsby-plugin-image",
+  "gatsby-plugin-sharp",
+  {
+    resolve: `gatsby-source-filesystem`,
+    options: {
+      name: `blog`,
+      path: `${__dirname}/src/blog/`,
+    },
+  },
+  "gatsby-plugin-mdx",
+],
 };
